@@ -41,8 +41,7 @@ body{font-family:var(--font);display:flex;flex-direction:column;background:var(-
 /* APP SHELL */
 #app{display:flex;flex-direction:column;height:100%;max-width:430px;margin:0 auto;position:relative;overflow:hidden;background:var(--bg);}
 
-/* STATUS BAR */
-.status-bar{padding:calc(var(--safe-top) + 12px) 24px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:var(--text);flex-shrink:0;min-height:44px;}
+
 
 /* SCREENS */
 .screen{display:none;flex-direction:column;flex:1;overflow:hidden;}
@@ -260,15 +259,7 @@ body{font-family:var(--font);display:flex;flex-direction:column;background:var(-
 <body>
 <div id="app">
 
-  <!-- STATUS BAR -->
-  <div class="status-bar">
-    <span id="clock">9:41</span>
-    <div style="display:flex;gap:6px;align-items:center;">
-      <span style="font-size:12px;">●●●</span>
-      <span style="font-size:12px;">WiFi</span>
-      <span style="font-size:14px;">🔋</span>
-    </div>
-  </div>
+
 
   <!-- ── HOME ── -->
   <div class="screen active" id="sc-home">
@@ -528,9 +519,7 @@ function greet(){
   return h<12?'Good morning, Shaik 👋':h<17?'Good afternoon, Shaik 👋':'Good evening, Shaik 👋';
 }
 
-// ─── CLOCK ───────────────────────────────────────────────────────────────────
-function updateClock(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
-setInterval(updateClock,15000);updateClock();
+
 
 // ─── INIT UI ─────────────────────────────────────────────────────────────────
 document.getElementById('greeting').textContent=greet();
